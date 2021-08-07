@@ -10,7 +10,7 @@ To use it, #include "./includes/SimpleLogger.h" to your project.
 And then using the functions under SimpleLogger:: namespace to
 log your program. Be sure to setLogFilePath() first.
 
-Be aware that Keyword "ERROR" in this file might conflict with
+Be aware that Keyword "Error" in this file might conflict with
 the same keyword in other file
 
 
@@ -21,14 +21,14 @@ Following levels are all the LoggingLevels.
 You can set specific level to logger.
 When logging messages, only the message with level that is
 equal or higher than user-defined level will be log.
-Default level is NOTSET
+Default level is Notset
 
-    NOTSET    = 0
-    DEBUG     = 1
-    INFO      = 2
-    WARNING   = 3
-    ERROR     = 4
-    CRITICAL  = 5
+    Notset    = 0
+    Debug     = 1
+    Info      = 2
+    Warning   = 3
+    Error     = 4
+    Critical  = 5
 
 
 
@@ -38,7 +38,7 @@ Subtitute following Symbols into a std::string and set LogFormat
 Default formatting is: [%v][%Y-%M-%D %h:%m:%s,%S]: %l
 
 Symbols:
-  %v  => LoggingLevels (NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  %v  => LoggingLevels (Notset, Debug, Info, Warning, Error, Critical)
   %Y  => Year of logging
   %M  => Month of logging
   %D  => Day of logging

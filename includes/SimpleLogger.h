@@ -1,5 +1,6 @@
 
 #pragma once
+
 /* ***************************************************************************
  * 
  * Author: Gavin1937
@@ -12,7 +13,7 @@
  * And then using the functions under SimpleLogger:: namespace to
  * log your program. Be sure to setLogFilePath() first.
  * 
- * Be aware that Keyword "ERROR" in this file might conflict with
+ * Be aware that Keyword "Error" in this file might conflict with
  * the same keyword in other file
  * 
  * 
@@ -23,14 +24,14 @@
  * You can set specific level to logger.
  * When logging messages, only the message with level that is
  * equal or higher than user-defined level will be log.
- * Default level is NOTSET
+ * Default level is Notset
  * 
- *     NOTSET    = 0
- *     DEBUG     = 1
- *     INFO      = 2
- *     WARNING   = 3
- *     ERROR     = 4
- *     CRITICAL  = 5
+ *     Notset    = 0
+ *     Debug     = 1
+ *     Info      = 2
+ *     Warning   = 3
+ *     Error     = 4
+ *     Critical  = 5
  * 
  * 
  * 
@@ -40,7 +41,7 @@
  * Default formatting is: [%v][%Y-%M-%D %h:%m:%s,%S]: %l
  * 
  * Symbols:
- *   %v  => LoggingLevels (NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL)
+ *   %v  => LoggingLevels (Notset, Debug, Info, Warning, Error, Critical)
  *   %Y  => Year of logging
  *   %M  => Month of logging
  *   %D  => Day of logging
@@ -52,9 +53,6 @@
  * 
  * ***************************************************************************/
 
-
-// undefine "ERROR" for logger
-#undef ERROR
 
 // C++ STL
 #include <string>
@@ -90,7 +88,7 @@ public:
 public: // static interface functions
     // Following functions are designed for 
     // calling w/ SimpleLogger:: namespace
-    // e.g. SimpleLogger::DEBUG("message");
+    // e.g. SimpleLogger::Debug("message");
     
     // get instance of singleton class
     static SimpleLogger& instance()
@@ -100,25 +98,25 @@ public: // static interface functions
     }
     
     // static logging functions
-    static void DEBUG(const std::string& msg)
+    static void Debug(const std::string& msg)
     {
-        SimpleLogger::instance().logDEBUG(msg);
+        SimpleLogger::instance().logDebug(msg);
     }
-    static void INFO(const std::string& msg)
+    static void Info(const std::string& msg)
     {
-        SimpleLogger::instance().logINFO(msg);
+        SimpleLogger::instance().logInfo(msg);
     }
-    static void WARNING(const std::string& msg)
+    static void Warning(const std::string& msg)
     {
-        SimpleLogger::instance().logWARNING(msg);
+        SimpleLogger::instance().logWarning(msg);
     }
-    static void ERROR(const std::string& msg)
+    static void Error(const std::string& msg)
     {
-        SimpleLogger::instance().logERROR(msg);
+        SimpleLogger::instance().logError(msg);
     }
-    static void CRITICAL(const std::string& msg)
+    static void Critical(const std::string& msg)
     {
-        SimpleLogger::instance().logCRITICAL(msg);
+        SimpleLogger::instance().logCritical(msg);
     }
     
     // getters
@@ -152,11 +150,11 @@ public: // static interface functions
 public: // non-static interface functions
     
     // logging functions
-    void logDEBUG(const std::string& msg);
-    void logINFO(const std::string& msg);
-    void logWARNING(const std::string& msg);
-    void logERROR(const std::string& msg);
-    void logCRITICAL(const std::string& msg);
+    void logDebug(const std::string& msg);
+    void logInfo(const std::string& msg);
+    void logWarning(const std::string& msg);
+    void logError(const std::string& msg);
+    void logCritical(const std::string& msg);
     
     // getters
     std::string getLogFilePath() const;
@@ -183,10 +181,10 @@ private:
 
 // Logging Level
 enum class LoggingLevel {
-    NOTSET    = 0,
-    DEBUG     = 1,
-    INFO      = 2,
-    WARNING   = 3,
-    ERROR     = 4,
-    CRITICAL  = 5
+    Notset    = 0,
+    Debug     = 1,
+    Info      = 2,
+    Warning   = 3,
+    Error     = 4,
+    Critical  = 5
 };

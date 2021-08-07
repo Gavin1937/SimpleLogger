@@ -28,12 +28,12 @@ std::string getGlobLoggingFormat()
 std::string LoggingLv2Str(LoggingLevel lv)
 {
     const static std::string LOGGINGLV_STR_TABLE[6] = {
-        "NOTSET",
-        "DEBUG",
-        "INFO",
-        "WARNING",
-        "ERROR",
-        "CRITICAL"
+        "Notset",
+        "Debug",
+        "Info",
+        "Warning",
+        "Error",
+        "Critical"
     };
     return LOGGINGLV_STR_TABLE[int(lv)];
 }
@@ -113,35 +113,35 @@ std::string getFormattedStr(
 // ========================= SimpleLogger =========================
 
 // logging functions
-void SimpleLogger::logDEBUG(const std::string& msg)
+void SimpleLogger::logDebug(const std::string& msg)
 {
-    // only log msg if m_CurrentLv <= DEBUG
-    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::DEBUG))
-        write2LogFile(LoggingLevel::DEBUG, msg);
+    // only log msg if m_CurrentLv <= Debug
+    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::Debug))
+        write2LogFile(LoggingLevel::Debug, msg);
 }
-void SimpleLogger::logINFO(const std::string& msg)
+void SimpleLogger::logInfo(const std::string& msg)
 {
-    // only log msg if m_CurrentLv <= INFO
-    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::INFO))
-        write2LogFile(LoggingLevel::INFO, msg);
+    // only log msg if m_CurrentLv <= Info
+    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::Info))
+        write2LogFile(LoggingLevel::Info, msg);
 }
-void SimpleLogger::logWARNING(const std::string& msg)
+void SimpleLogger::logWarning(const std::string& msg)
 {
-    // only log msg if m_CurrentLv <= WARNING
-    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::WARNING))
-        write2LogFile(LoggingLevel::WARNING, msg);
+    // only log msg if m_CurrentLv <= Warning
+    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::Warning))
+        write2LogFile(LoggingLevel::Warning, msg);
 }
-void SimpleLogger::logERROR(const std::string& msg)
+void SimpleLogger::logError(const std::string& msg)
 {
-    // only log msg if m_CurrentLv <= ERROR
-    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::ERROR))
-        write2LogFile(LoggingLevel::ERROR, msg);
+    // only log msg if m_CurrentLv <= Error
+    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::Error))
+        write2LogFile(LoggingLevel::Error, msg);
 }
-void SimpleLogger::logCRITICAL(const std::string& msg)
+void SimpleLogger::logCritical(const std::string& msg)
 {
-    // only log msg if m_CurrentLv <= CRITICAL
-    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::CRITICAL))
-        write2LogFile(LoggingLevel::CRITICAL, msg);
+    // only log msg if m_CurrentLv <= Critical
+    if (isLowerEqLoggingLv(m_CurrentLv, LoggingLevel::Critical))
+        write2LogFile(LoggingLevel::Critical, msg);
 }
 
 // getters
@@ -178,7 +178,7 @@ void SimpleLogger::setLoggingLv(LoggingLevel lv)
 SimpleLogger::SimpleLogger() 
     : m_LogFilePath(""),
     m_LogFormat(getGlobLoggingFormat()),
-    m_CurrentLv(LoggingLevel::NOTSET)
+    m_CurrentLv(LoggingLevel::Notset)
 {}
 
 // helper functions
