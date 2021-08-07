@@ -63,6 +63,8 @@ std::string getFormattedStr(
     std::string min = std::to_string(tm_obj.tm_min);
     std::string sec = std::to_string(tm_obj.tm_sec);
     std::string mili_sec = std::to_string(rawtime_mili-((rawtime_mili/1000)*1000));
+    // making sure mili_sec always has 3 digits
+    while (mili_sec.length() < 3) mili_sec.insert(mili_sec.begin(), '0');
     
     // subsitute all parameters into formatted string
     std::string output(format);
