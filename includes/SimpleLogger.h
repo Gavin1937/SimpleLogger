@@ -1,8 +1,12 @@
 
 /* ***************************************************************************
- *
+ * 
+ * Author: Gavin1937
+ * GitHub: https://github.com/Gavin1937/SimpleLogger
+ * 
+ * 
  * A simple C++ program logger library
- *
+ * 
  * To use it, #include "./includes/SimpleLogger.h" to your project.
  * And then using the functions under SimpleLogger:: namespace to
  * log your program. Be sure to setLogFilePath() first.
