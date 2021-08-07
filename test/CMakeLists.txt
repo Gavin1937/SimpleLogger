@@ -8,7 +8,7 @@ include_directories(../include)
 set(SRC
     ../src/SimpleLogger.cpp
 )
-set(INC
+set(INCL
     ../include/SimpleLogger.h
 )
 set(TEST
@@ -16,5 +16,5 @@ set(TEST
 )
 
 add_executable(Test
-    ${SRC} ${INC} ${TEST}
+    ${SRC} ${INCL} ${TEST}
 ) 
