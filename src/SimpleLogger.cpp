@@ -20,6 +20,23 @@ namespace {
     }
 }
 
+std::string getGlobLoggingFormat()
+{
+    const static std::string LOGGING_FORMAT("[%v][%Y-%M-%D %h:%m:%s,%S]: %l");
+    return LOGGING_FORMAT;
+}
+std::string LoggingLv2Str(LoggingLevel lv)
+{
+    const static std::string LOGGINGLV_STR_TABLE[6] = {
+        "NOTSET",
+        "DEBUG",
+        "INFO",
+        "WARNING",
+        "ERROR",
+        "CRITICAL"
+    };
+    return LOGGINGLV_STR_TABLE[int(lv)];
+}
 std::string getFormattedStr(
     LoggingLevel lv,
     const std::string& msg,
@@ -55,7 +72,7 @@ std::string getFormattedStr(
         switch (output[pos+1])
         {
         case 'v':
-            output.replace(pos, 2, GLOB_LOGGINGLV_STR_TABLE[int(lv)]);
+            output.replace(pos, 2, LoggingLv2Str(lv));
             break;
         case 'Y':
             output.replace(pos, 2, year);
@@ -160,7 +177,7 @@ void SimpleLogger::setLoggingLv(LoggingLevel lv)
 // private default constructor
 SimpleLogger::SimpleLogger() 
     : m_LogFilePath(""),
-    m_LogFormat(GLOB_LOGGING_FORMAT),
+    m_LogFormat(getGlobLoggingFormat()),
     m_CurrentLv(LoggingLevel::NOTSET)
 {}
 

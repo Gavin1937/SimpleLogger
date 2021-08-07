@@ -8,7 +8,7 @@ int main()
     LOG::LogFilePath("./Test.log");
     
     // demonstrate logging level with different log methods
-    LOG::INFO("Current LoggingLevel = " + GLOB_LOGGINGLV_STR_TABLE[(int)LOG::LoggingLv()]);
+    LOG::INFO("Current LoggingLevel = " + LoggingLv2Str(LOG::LoggingLv()));
     
     LOG::LoggingLv(LoggingLevel::DEBUG);
     LOG::DEBUG("Set LoggingLevel to DEBUG");
@@ -30,7 +30,7 @@ int main()
     // using other getters
     inst.logINFO("LogFilePath is: " + inst.getLogFilePath());
     inst.logINFO("LogFilePath is: " + inst.getLogFilePath());
-    inst.logINFO("LoggingLv is: " + GLOB_LOGGINGLV_STR_TABLE[(int)inst.getLoggingLv()]);
+    inst.logINFO("LoggingLv is: " + LoggingLv2Str(inst.getLoggingLv()));
     
     // changing log format
     inst.logINFO("Before changing LogFormat");

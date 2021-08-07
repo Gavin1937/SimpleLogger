@@ -61,19 +61,12 @@ enum class LoggingLevel;
 
 // public functions & glob variables
 
-const static std::string GLOB_LOGGING_FORMAT("[%v][%Y-%M-%D %h:%m:%s,%S]: %l");
-const std::string GLOB_LOGGINGLV_STR_TABLE[6] = {
-    "NOTSET",
-    "DEBUG",
-    "INFO",
-    "WARNING",
-    "ERROR",
-    "CRITICAL"
-};
+std::string getGlobLoggingFormat();
+std::string LoggingLv2Str(LoggingLevel lv);
 std::string getFormattedStr(
     LoggingLevel lv,
     const std::string& msg,
-    const std::string& format = GLOB_LOGGING_FORMAT);
+    const std::string& format = getGlobLoggingFormat());
 
 
 // Singleton Logger class definition
