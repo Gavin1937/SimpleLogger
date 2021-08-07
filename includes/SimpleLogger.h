@@ -52,6 +52,9 @@
  * ***************************************************************************/
 
 
+// undefine "ERROR" for logger
+#undef ERROR
+
 // C++ STL
 #include <string>
 
